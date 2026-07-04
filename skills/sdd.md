@@ -106,7 +106,7 @@ For each phase in Section 11, create the corresponding file in `future_phases/` 
 ## Invocation
 ```bash
 # agy
-agy --goal "$(cat skills/sdd.md)"
+agy --prompt "$(cat skills/sdd.md)"
 
 # opencode
 opencode -p "$(cat skills/sdd.md)"

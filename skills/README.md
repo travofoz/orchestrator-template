@@ -26,7 +26,7 @@ All skills follow the same pattern:
 
 ```bash
 # agy
-agy --goal "$(cat skills/<skill>.md)"
+agy --prompt "$(cat skills/<skill>.md)"
 
 # opencode
 opencode -p "$(cat skills/<skill>.md)"

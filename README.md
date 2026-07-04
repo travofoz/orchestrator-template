@@ -39,7 +39,7 @@ Edit `project/opencode.json` to customize MCP servers and behavioral instruction
 ### 4. Launch the supervisor
 
 ```bash
-chmod +x monitor.sh && agy --goal "$(cat supervisor_goal.md)" --loop
+chmod +x monitor.sh && agy --prompt "$(cat supervisor_goal.md)" --loop
 ```
 
 Run this inside a persistent `tmux` or `screen` session for unattended execution.

@@ -54,7 +54,7 @@ Rate your confidence that the next phase spec is accurate and complete:
 ## Invocation
 ```bash
 # agy
-agy --goal "$(cat skills/retro.md)"
+agy --prompt "$(cat skills/retro.md)"
 
 # opencode
 opencode -p "$(cat skills/retro.md)"

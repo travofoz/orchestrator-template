@@ -78,7 +78,7 @@ Explicitly list what NOT to build in this phase. This prevents scope creep.
 ## Invocation
 ```bash
 # agy
-agy --goal "$(cat skills/phase_spec_writer.md)"
+agy --prompt "$(cat skills/phase_spec_writer.md)"
 
 # opencode
 opencode -p "$(cat skills/phase_spec_writer.md)"

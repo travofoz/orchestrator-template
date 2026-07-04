@@ -74,7 +74,7 @@ These mandate a FAIL verdict regardless of anything else:
 ## Invocation
 ```bash
 # agy
-agy --goal "$(cat skills/code_review.md)" 
+agy --prompt "$(cat skills/code_review.md)" 
 
 # opencode  
 opencode -p "$(cat skills/code_review.md)"

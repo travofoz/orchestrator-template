@@ -5,14 +5,14 @@ This orchestrator is tool-agnostic. Set the `AGENT` environment variable before 
 
 ```bash
 # Use agy (Antigravity CLI)
-export AGENT="agy --goal"
+export AGENT="agy --prompt"
 
 # Use opencode
 export AGENT="opencode -p"
 ```
 
 The supervisor will use `$AGENT` everywhere it needs to invoke a reasoning engine.
-Default if unset: `agy --goal`
+Default if unset: `agy --prompt`
 
 ---
 
@@ -106,8 +106,8 @@ Read `./state.json`:
    ```
    Where `<INNER_AGENT_COMMAND>` depends on the inner tool configured in `project/`:
    - **iteratr**: `iteratr build -s ../specs/current_phase.md --headless`
-   - **opencode**: `opencode run ../specs/current_phase.md`
-   - **agy**: `agy --goal "$(cat ../specs/current_phase.md)"`
+   - **opencode**: `opencode run ../specs/current_phase.md --agent worker --dangerously-skip-permissions`
+   - **agy**: `agy --prompt "$(cat ../specs/current_phase.md)" --dangerously-skip-permissions`
 
 2. Start the hardware gatekeeper:
    ```bash
@@ -129,8 +129,8 @@ Once `inotifywait` releases, read `./monitor.status`:
 - `TRIGGER_LLM_SUCCESS` → spawn a fresh, context-blind critic:
 
 ```bash
-AGENT="${AGENT:-agy --goal}"
-$AGENT "$(cat skills/code_review.md)"
+AGENT="${AGENT:-agy --prompt}"
+$AGENT "$(cat skills/code_review.md)" --agent critic --dangerously-skip-permissions
 ```
 
 The critic writes its verdict to `project/audit_report.md`.
@@ -187,7 +187,7 @@ Options after circuit breaker:
 
 ```bash
 # Set your agent tool
-export AGENT="agy --goal"        # or: export AGENT="opencode -p"
+export AGENT="agy --prompt"        # or: export AGENT="opencode -p"
 
 # Launch the supervisor loop
 chmod +x monitor.sh && $AGENT "$(cat supervisor_goal.md)"
