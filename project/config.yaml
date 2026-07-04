@@ -1,0 +1,15 @@
+# Iteratr Configuration
+# Adjust these settings to control the inner loop engine behavior
+
+# Model provider and model selection
+provider: "gemini"
+model: "gemini-2.5-pro"
+
+# Execution behavior
+auto_approve: true
+max_iterations: 50
+timeout_minutes: 30
+
+# Output controls
+verbose: false
+log_level: "info"

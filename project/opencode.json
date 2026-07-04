@@ -1,0 +1,4 @@
+{
+  "mcpServers": {},
+  "customInstructions": "You are building inside a supervised orchestration pipeline. Follow the specification in the active phase file exactly. Complete every checkbox task. Do not leave stubs, TODOs, or placeholder logic."
+}

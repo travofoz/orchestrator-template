@@ -1,0 +1,11 @@
+{
+  "pipeline": {
+    "active_phase": null,
+    "active_phase_source": null,
+    "remediation_attempt": 0,
+    "max_remediation_attempts": 4,
+    "completed_phases": [],
+    "status": "IDLE",
+    "last_updated": null
+  }
+}
