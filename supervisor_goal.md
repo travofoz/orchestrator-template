@@ -102,12 +102,8 @@ Read `./state.json`:
 
 1. Launch the inner agent loop as a background daemon:
    ```bash
-   cd project && <INNER_AGENT_COMMAND> > ../child_exec.log 2>&1 & echo $! > ../child.pid
+   cd project && iteratr build -s ../specs/current_phase.md --headless > ../child_exec.log 2>&1 & echo $! > ../child.pid
    ```
-   Where `<INNER_AGENT_COMMAND>` depends on the inner tool configured in `project/`:
-   - **iteratr**: `iteratr build -s ../specs/current_phase.md --headless`
-   - **opencode**: `opencode run ../specs/current_phase.md --agent worker --dangerously-skip-permissions`
-   - **agy**: `agy --prompt "$(cat ../specs/current_phase.md)" --dangerously-skip-permissions`
 
 2. Start the hardware gatekeeper:
    ```bash
