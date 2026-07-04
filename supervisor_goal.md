@@ -84,7 +84,9 @@ Execute continuously across all files in `./future_phases/` until the pool is ex
 
 Read `./state.json`:
 - If `active_phase` is non-null → resume at **Step 4.2** (crash recovery)
-- If `active_phase` is null → copy the next file from `./future_phases/` (lexicographic order) to `./specs/current_phase.md`, update `./state.json`:
+- If `active_phase` is null:
+  1. Check `./future_phases/`. If it contains no `.md` files, **exit the orchestrator completely** (success).
+  2. Otherwise, copy the next file from `./future_phases/` (lexicographic order) to `./specs/current_phase.md`, update `./state.json`:
 
 ```json
 {
